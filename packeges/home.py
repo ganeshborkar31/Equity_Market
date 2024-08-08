@@ -22,7 +22,7 @@ from packeges import account
 
 def home_def():
 
-    nse=pd.read_csv('/home/ganesh/Projects/BE_Project/NSE.csv')
+    nse=pd.read_csv('/home/ganesh/Projects/BE_Project/SPrediction/NSE.csv')
     symbols=np.array(nse["Symbol"])
    
     symboll = st.sidebar.selectbox('Select dataset for prediction', symbols)
