@@ -4,7 +4,7 @@ import numpy as np
 from keras.models import load_model
 import matplotlib.pyplot as plt
 
-import streamlit as st
+import streamlit as st  #streamlit-1.33.0
 from streamlit_option_menu import option_menu
 
 from pandas_datareader import data as pdr
@@ -27,7 +27,6 @@ st.set_page_config(
     page_icon="📈 ",
 )
 
-
 # nse=pd.read_csv('/home/ganesh/Projects/BE_Project/NSE.csv')
 # symbols=np.array(nse["Symbol"])
 
@@ -39,8 +38,35 @@ st.set_page_config(
 
 
 #stock = st.text_input("Enter the Stock ID", "TCS.NS") 
-       
 
+### -- Authentication library --
+
+from pathlib import Path
+import streamlit_authenticator as stauth
+import pickle
+
+### --- User Authentication ---
+
+# names = ["Ganesh Borkar", "Mangesh Hagare"]
+# usernames = ["ganeshb", "mangeshh"]
+
+# file_path = Path(__file__).parent/"packeges/hashed_pw.pkl"
+# with file_path.open("rb") as file:  
+#     hashed_passwords = pickle.load(file)
+
+# authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
+#                                     "sales_dashboard", "abcdef",cookie_expiry_days=30)
+
+# name, authenticator_status,username = authenticator.login("Login","main")
+
+# if authenticator_status == False:
+#     st.error("Username/Password is incorect")
+# if authenticator_status == None:  
+#     st.warning("Plese Enter Your username and password")
+    
+# if authenticator_status:
+    
+# @st.cache
 def run():
     # app = st.sidebar(
     with st.sidebar:        
@@ -75,7 +101,7 @@ def run():
     
     
 run() 
- 
+
 
 
 # sym=yf.Ticker(symbol)
